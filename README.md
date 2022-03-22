@@ -10,7 +10,7 @@ This is a library that gives you an indicator gesture of a scrolling list, you c
 npm install react-native-tracking-gestures
 ```
 ## :sassy_woman: Demo 
-![Demo ]()
+![Demo ](https://github.com/khanhbachnguyen/react-native-tracking-gestures/blob/main/example/src/demo/react-native-tracking-gestures.gif)
 
 ## :four_leaf_clover: Usage 
 Here is an example of using
