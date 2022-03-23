@@ -14,7 +14,6 @@ export default class TrackingGesturesCore {
      * animation value of indicator
      */
     private _animated: Animated.Value;
-    private _isVisibleInSight: boolean = true;
     /**
      * set options
      */
@@ -34,12 +33,6 @@ export default class TrackingGesturesCore {
         this._type = type;
     }
 
-    public set setIsVisibleInSight(is: boolean) {
-        this._isVisibleInSight = is;
-    }
-    public get isVisibleInSight() {
-        return this._isVisibleInSight;
-    }
 
     public get getType() {
         return this._type;

@@ -41,7 +41,11 @@ export interface TrackingGesturesProps {
     /**
      * tracking gestures type
      */
-    type?: 'flexible' | 'classic'
+    type?: 'flexible' | 'classic',
+    /**
+     * hidden/visibility indicator
+     */
+    hidden?: boolean
 };
 
 

@@ -1,27 +1,30 @@
 import * as React from 'react';
 import { Animated, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
-import TrackingGestures from 'react-native-tracking-gestures';
+// import TrackingGestures from 'react-native-tracking-gestures';
+import TrackingGestures from '../../src/index';
+import { TrackingElement } from '../../src/types/TrackingElement';
 
 import { data } from './data';
 
 export default function App(): JSX.Element {
 
   let _scrollX = React.useRef(new Animated.Value(0)).current;
-
   const [widthContent, setWidthContent] = React.useState(0);
 
   const [state, setState] = React.useState({
     widthContent: 0,
     width: 30,
     amount: 14,
-    trackingStyle: { backgroundColor: '#dedede' },
-    indicatorStyle: { backgroundColor: '#0899D7' },
+    trackingStyle: {  },
+    indicatorStyle: { },
     isVisibleInSight: false,
-    type: 'classic'
+    type: 'classic',
+    hidden: false
   });
 
   let tmp = React.useRef(state);
+
   const renderDOM = () => {
     let DOM = [];
     for (let i = 0; i < state.amount; i++) {
@@ -93,6 +96,7 @@ export default function App(): JSX.Element {
       </View>
       <View style={{ alignItems: "center" }}>
         <TrackingGestures
+          hidden={state.hidden}
           widthContentReference={widthContent}
           animatedValue={_scrollX}
           width={state.width}
@@ -113,6 +117,7 @@ export default function App(): JSX.Element {
         <ButtonDemo onClick={() => setState(prev => ({ ...prev, indicatorStyle: { backgroundColor: randomColor() }, trackingStyle: { backgroundColor: randomColor() } }))} text="background change" />
         <ButtonDemo onClick={() => setState({ ...state, width: state.width - 5 })} text="width - 5" />
         <ButtonDemo onClick={() => setState({ ...state, width: state.width + 5 })} text="width + 5" />
+        <ButtonDemo onClick={() => setState({ ...state, hidden: !state.hidden })} text={`hidden: ${state.hidden}`} />
         <ButtonDemo onClick={() => setState(tmp.current)} text="set default" />
       </View>
 
