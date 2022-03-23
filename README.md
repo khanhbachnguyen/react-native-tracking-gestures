@@ -3,7 +3,7 @@
 ## :green_heart: Introduction 
 This is a library that gives you scrolling list indicator gestures, you can change the properties to fit your needs.
 
-note for this to work well we need to declare scrolling list animation value `<ScrollView onScroll = {Animated.event([{nativeEvent: {contentOffset: {x: ** _scrollX **}}}] )} ...` and `onContentSizeChange={w => setWidthContent(w)}` property, for more we can see below instructions
+note for this to work well we need to declare scrolling list animation value `<ScrollView onScroll = {Animated.event([{nativeEvent: {contentOffset: {x: _scrollX}}}] )} ...` and `onContentSizeChange={w => setWidthContent(w)}` property, for more we can see below instructions
 ## :atom: Live Demo
 live [**example**](https://codesandbox.io/s/epic-tdd-et5gy8?file=/src/App.js) here
 ## :ok_man: Getting Started 
