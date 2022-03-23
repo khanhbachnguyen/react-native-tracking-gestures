@@ -55,7 +55,7 @@ const App = () => {
 ## :star2: Props
 | **Property** | **Type** | **Require** | **Default** | **Description** |
 |-------------|------|-------|--------|--------------|
-| setOptions | setOptions |  |  | if you want to change indicator height, that in like this `trackingStyle: {height:5}`, the same goes for `borderRadius` |
+| setOptions | setOptions |  | `trackingStyle: {height:4,backgroundColor: "rgba(204, 204, 204, 0.3)",...}`,`indicatorStyle:{backgroundColor: "#F01D7C",...}` | if you want to change indicator height, that in like this `trackingStyle: {height:5}`, the same goes for `borderRadius` |
 | animatedValue | Animated.Value | :white_check_mark: |  |  |
 | width | number |  | `30` | width of indicator |
 | widthContentReference | number | :white_check_mark: |  |  width directive reference content |
