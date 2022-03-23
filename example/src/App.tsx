@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { Animated, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
-// import TrackingGestures from 'react-native-tracking-gestures';
-import TrackingGestures from '../../src/index';
-import { TrackingElement } from '../../src/types/TrackingElement';
+import TrackingGestures from 'react-native-tracking-gestures';
 
 import { data } from './data';
 
@@ -16,8 +14,8 @@ export default function App(): JSX.Element {
     widthContent: 0,
     width: 30,
     amount: 14,
-    trackingStyle: {  },
-    indicatorStyle: { },
+    trackingStyle: {},
+    indicatorStyle: {},
     isVisibleInSight: false,
     type: 'classic',
     hidden: false
@@ -59,7 +57,6 @@ export default function App(): JSX.Element {
     <View style={{}}>
       <Text style={{ position: "absolute", zIndex: 1000, top: 40, left: 20 }}>{JSON.stringify(state, null, 4)}</Text>
 
-
       <View style={{ alignItems: "center", marginBottom: 30, marginTop: 300 }}>
         <View style={{ flexDirection: "row" }}>
           <View>
@@ -84,6 +81,7 @@ export default function App(): JSX.Element {
 
       <View style={{ height: 100 }}>
         <ScrollView
+          showsHorizontalScrollIndicator={false}
           onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: _scrollX } } }], { useNativeDriver: false })}
           horizontal={true}
           onContentSizeChange={w => {
@@ -96,6 +94,7 @@ export default function App(): JSX.Element {
       </View>
       <View style={{ alignItems: "center" }}>
         <TrackingGestures
+          scrollEventThrottle={16}
           hidden={state.hidden}
           widthContentReference={widthContent}
           animatedValue={_scrollX}

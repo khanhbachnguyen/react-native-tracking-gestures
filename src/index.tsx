@@ -1,6 +1,5 @@
 import { Animated, useWindowDimensions, View } from 'react-native';
 import React, { useEffect, useRef, useImperativeHandle } from 'react';
-import { style } from './assets/css';
 
 import Indicator from './core/Indicator';
 
@@ -35,8 +34,25 @@ const TrackingGestures = React.forwardRef<TrackingElement, TrackingGesturesProps
     }
   }, []);
 
-  setOptions.trackingStyle = { ...style.tracking, width, ...setOptions.trackingStyle as object };
-  setOptions.indicatorStyle = { ...style.indicator, ...setOptions.indicatorStyle as object };
+
+  setOptions.trackingStyle = {
+    position: "relative",
+    height: 4,
+    backgroundColor: "rgba(204, 204, 204, 0.3)",
+    borderRadius: 50,
+    overflow: "hidden",
+    width,
+    ...setOptions.trackingStyle as object
+  };
+  setOptions.indicatorStyle = {
+    position: "absolute",
+    left: 0,
+    top: 0,
+    bottom: 0,
+    backgroundColor: "#F01D7C",
+    borderRadius: 50,
+    ...setOptions.indicatorStyle as object
+  };
 
   _indicator.current = Indicator.create(widthContentReference, animatedValue, {
     screenW: w,

@@ -4,6 +4,8 @@
 This is a library that gives you scrolling list indicator gestures, you can change the properties to fit your needs.
 
 note for this to work well we need to declare scrolling list animation value `<ScrollView onScroll = {Animated.event([{nativeEvent: {contentOffset: {x: _scrollX}}}] )} ...` and `onContentSizeChange={w => setWidthContent(w)}` property, for more we can see below instructions
+
+Support on platforms: mobile, ios, web
 ## :atom: Live Demo
 live [**example**](https://codesandbox.io/s/epic-tdd-et5gy8?file=/src/App.js) here
 ## :ok_man: Getting Started 
@@ -27,6 +29,7 @@ const App = () => {
   return(
     <View>
       <ScrollView
+          scrollEventThrottle={16}
           onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: _scrollX } } }], { useNativeDriver: false })}
           horizontal={true}
           onContentSizeChange={w => setWidthContent(w)}
